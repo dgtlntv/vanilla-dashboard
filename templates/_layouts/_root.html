@@ -55,11 +55,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="p-navigation__nav">
       <ul class="p-navigation__items">
         <li class="p-navigation__item {% if path.startswith('/brand') %}is-selected{% endif %}"><a class="p-navigation__link " href="/brand/">Brand</a></li>
-        <li class="p-navigation__item {% if path.startswith('/font') %}is-selected{% endif %}"><a class="p-navigation__link" href="/font/">Font</a></li>
-        <li class="p-navigation__item {% if path.startswith('/vanilla') %}is-selected{% endif %}"><a class="p-navigation__link" href="/vanilla/">Vanilla</a></li>
-        <li class="p-navigation__item {% if path.startswith('/accessibility') %}is-selected{% endif %}"><a class="p-navigation__link" href="/accessibility/">Accessibility</a></li>
-        <li class="p-navigation__item {% if path.startswith('/resources') %}is-selected{% endif %}"><a class="p-navigation__link" href="/resources/">Resources</a></li>
-        <li class="p-navigation__item {% if path.startswith('/contribute') %}is-selected{% endif %}"><a class="p-navigation__link" href="/contribute/">Contribute</a></li>
       </ul>
       <ul class="p-navigation__items global-nav"></ul>
     </nav>
@@ -118,11 +113,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   canonicalGlobalNav.createNav();
   cpNs.cookiePolicy();
 </script>
-
-{% if path.startswith('/font') %}
-<script src="https://assets.ubuntu.com/v1/49d19be0-polyfills.js"></script>
-{% endif %}
-
 
 </body>
 </html>
