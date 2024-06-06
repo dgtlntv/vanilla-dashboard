@@ -14,6 +14,22 @@
   dependencies:
     vanilla-framework "4.9.0"
 
+"@maxim_mazurok/gapi.client.discovery-v1@latest":
+  version "0.1.20200806"
+  resolved "https://registry.yarnpkg.com/@maxim_mazurok/gapi.client.discovery-v1/-/gapi.client.discovery-v1-0.1.20200806.tgz#1bdb82fadd659a159765178993dff6dbcb5968bc"
+  integrity sha512-Wl6UfmZVDdWbY3PUu8E2ULk9RPLjnMqp/iOA4tcK8Ne+U/GmlnWP/e34IaZNGArfl7iXJNOG+/3Rj9L9jQyF9Q==
+  dependencies:
+    "@types/gapi.client" "*"
+    "@types/gapi.client.discovery-v1" "*"
+
+"@maxim_mazurok/gapi.client.sheets-v4@latest":
+  version "0.0.20240528"
+  resolved "https://registry.yarnpkg.com/@maxim_mazurok/gapi.client.sheets-v4/-/gapi.client.sheets-v4-0.0.20240528.tgz#bc46c077bfe4cc51e93cb6cef407f3342a1c4a93"
+  integrity sha512-LZfMEbxfZzSwUSXz25aVMhZfbgU5taq3a3lSb9cJJDeu5L9sdJ6lPUBB0H+hRJCgK8vdRjxurGu1wr6EAzXFNg==
+  dependencies:
+    "@types/gapi.client" "*"
+    "@types/gapi.client.discovery-v1" "*"
+
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.3.tgz#3a582bdb53804c6ba6d146579c46e52130cf4a3b"
@@ -44,6 +60,30 @@
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
+
+"@types/gapi.client.discovery-v1@*":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@types/gapi.client.discovery-v1/-/gapi.client.discovery-v1-0.0.4.tgz#92818a15931430751ed50d2381d0081fd0cefc20"
+  integrity sha512-uevhRumNE65F5mf2gABLaReOmbFSXONuzFZjNR3dYv6BmkHg+wciubHrfBAsp3554zNo3Dcg6dUAlwMqQfpwjQ==
+  dependencies:
+    "@maxim_mazurok/gapi.client.discovery-v1" latest
+
+"@types/gapi.client.sheets@^4.0.20201031":
+  version "4.0.20201031"
+  resolved "https://registry.yarnpkg.com/@types/gapi.client.sheets/-/gapi.client.sheets-4.0.20201031.tgz#2d11a6805385c4bcfc9d147ab5eb288a87547953"
+  integrity sha512-1Aiu11rNNoyPDHW6v8TVcSmlDN+MkxSuafwiawaK5YqZ+uYA+O63vjUvkK+3qNduSLh7D9qBJc/8GGwgN6gsTw==
+  dependencies:
+    "@maxim_mazurok/gapi.client.sheets-v4" latest
+
+"@types/gapi.client@*", "@types/gapi.client@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@types/gapi.client/-/gapi.client-1.0.8.tgz#8e02c57493b014521f2fa3359166c01dc2861cd7"
+  integrity sha512-qJQUmmumbYym3Amax0S8CVzuSngcXsC1fJdwRS2zeW5lM63zXkw4wJFP+bG0jzgi0R6EsJKoHnGNVTDbOyG1ng==
+
+"@types/gapi@^0.0.47":
+  version "0.0.47"
+  resolved "https://registry.yarnpkg.com/@types/gapi/-/gapi-0.0.47.tgz#3cef0a6a2accf4fc1405d08e2e001759cf440f56"
+  integrity sha512-/ZsLuq6BffMgbKMtZyDZ8vwQvTyKhKQ1G2K6VyWCgtHHhfSSXbk4+4JwImZiTjWNXfI2q1ZStAwFFHSkNoTkHA==
 
 acorn-jsx@^3.0.0:
   version "3.0.1"

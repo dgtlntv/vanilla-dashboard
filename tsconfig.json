@@ -4,7 +4,8 @@
     "noImplicitAny": true,
     "removeComments": true,
     "outFile": "static/js/main.js",
-    "sourceMap": true
+    "sourceMap": true,
+    "types": ["gapi", "gapi.client", "gapi.client.sheets"]
   },
   "include": ["ts/**/*.ts"],
   "exclude": ["**/*.test.ts"]

@@ -279,6 +279,21 @@
                 </tbody>
               </table>
 
+              <table aria-label="JAAS table example" class="p-main-table">
+                <thead>
+                  <tr>
+                    <th>URL</th>
+                    <th># elements w/ classNames</th>
+                    <th># pure Vanilla elements</th>
+                    <th># dirty Vanilla elements</th>
+                    <th>% pure Vanilla usage</th>
+                    <th>% dirty Vanilla usage</th>
+                    <th>% pure vs. dirty usage</th>
+                  </tr>
+                </thead>
+                <tbody id="vanilla-usage-stats-table"></tbody>
+              </table>
+
               {% block body %}{% endblock %}
             </div>
           </div>
@@ -399,6 +414,7 @@
       cpNs.cookiePolicy();
     </script>
 
+    <script src="https://apis.google.com/js/api.js"></script>
     <script src="{{ versioned_static('js/main.js') }}"></script>
   </body>
 </html>
