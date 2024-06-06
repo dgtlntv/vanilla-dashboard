@@ -1,118 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://assets.ubuntu.com/v1/cb22ba5d-favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png"
+      sizes="32x32"
+    />
 
-  <link rel="icon" type="image/png" href="https://assets.ubuntu.com/v1/cb22ba5d-favicon-16x16.png" sizes="16x16" />
-  <link rel="icon" type="image/png" href="https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png" sizes="32x32" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="{{ versioned_static('css/main.css') }}"
+    />
 
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ versioned_static('css/main.css') }}" />
+    <title>{% block title %}{{ title }}{% endblock title %}</title>
+    <meta
+      name="description"
+      content="Ubuntu brand, app and web guidelines that help you create professional materials, software, sites, apps that build the Ubuntu brand."
+    />
+    <meta
+      name="keywords"
+      content="Ubuntu, Design, Brand guidelines, web guidelines, apps guidelines, colors, buttons, layout, styleguide"
+    />
+    <meta name="author" content="Canonical" />
+    <meta
+      name="copydoc"
+      content="{% block meta_copydoc %}https://drive.google.com/drive/u/0/folders/1LxHnsplr5Xd8JQxNvwvLil2J_Q5_3loU{% endblock %}"
+    />
 
-  <title>{% block title %}{{ title }}{% endblock title %}</title>
-  <meta name="description" content="Ubuntu brand, app and web guidelines that help you create professional materials, software, sites, apps that build the Ubuntu brand.">
-  <meta name="keywords" content="Ubuntu, Design, Brand guidelines, web guidelines, apps guidelines, colors, buttons, layout, styleguide" />
-  <meta name="author" content="Canonical" />
-  <meta name="copydoc" content="{% block meta_copydoc %}https://drive.google.com/drive/u/0/folders/1LxHnsplr5Xd8JQxNvwvLil2J_Q5_3loU{% endblock %}" />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NV2KV6F");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-NV2KV6F');</script>
-  <!-- End Google Tag Manager -->
-</head>
+  <body class="l-site is-paper">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NV2KV6F"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-
-<body class="l-site is-paper">
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV2KV6F"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-<a href="#main-content" class="p-link--skip">Jump to main content</a>
-
-<header id="navigation" class="p-navigation is-dark">
-  <div class="p-navigation__row--25-75">
-
-    <div class="p-navigation__banner">
-      <div class="p-navigation__tagged-logo">
-        <a class="p-navigation__link" href="/">
-          <div class="p-navigation__logo-tag">
-            <img class="p-navigation__logo-icon" src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg" alt="">
+    <div class="l-application" role="presentation">
+      <div class="l-navigation-bar">
+        <div class="p-panel is-dark">
+          <div class="p-panel__header">
+            <a class="p-panel__logo" href="#">
+              <img
+                class="p-panel__logo-icon"
+                src="https://assets.ubuntu.com/v1/7144ec6d-logo-jaas-icon.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+              <img
+                class="p-panel__logo-name is-fading-when-collapsed"
+                src="https://assets.ubuntu.com/v1/2e04d794-logo-jaas.svg"
+                alt="JAAS"
+                height="16"
+              />
+            </a>
+            <div class="p-panel__controls">
+              <span class="p-panel__toggle js-menu-toggle">Menu</span>
+            </div>
           </div>
-          <span class="p-navigation__logo-title">Design</span>
-        </a>
+        </div>
       </div>
-      <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
-      <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+
+      <header class="l-navigation is-collapsed">
+        <div class="l-navigation__drawer">
+          <div class="p-panel is-dark">
+            <div class="p-panel__header is-sticky">
+              <a class="p-panel__logo" href="#">
+                <img
+                  class="p-panel__logo-icon"
+                  src="https://assets.ubuntu.com/v1/7144ec6d-logo-jaas-icon.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+                <img
+                  class="p-panel__logo-name is-fading-when-collapsed"
+                  src="https://assets.ubuntu.com/v1/2e04d794-logo-jaas.svg"
+                  alt="JAAS"
+                  height="16"
+                />
+              </a>
+              <div class="p-panel__controls u-hide--large">
+                <button
+                  class="p-button--base is-dark has-icon u-no-margin u-hide--medium js-menu-close"
+                >
+                  <i class="is-light p-icon--close"></i>
+                </button>
+                <button
+                  class="p-button--base is-dark has-icon u-no-margin u-hide--small js-menu-pin"
+                >
+                  <i class="is-light p-icon--pin"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-panel__content">
+              <div class="p-side-navigation--icons" id="drawer-icons">
+                <nav aria-label="Main">
+                  <ul class="p-side-navigation__list">
+                    <li class="p-side-navigation__item">
+                      <a class="p-side-navigation__link" href="/brand"
+                        ><i
+                          class="p-icon--information is-light p-side-navigation__icon"
+                        ></i
+                        ><span class="p-side-navigation__label"
+                          ><span class="p-side-navigation__label"
+                            >Home</span
+                          ></span
+                        ></a
+                      >
+                    </li>
+                    <li class="p-side-navigation__item">
+                      <a class="p-side-navigation__link" href="#"
+                        ><i
+                          class="p-icon--information is-light p-side-navigation__icon"
+                        ></i
+                        ><span class="p-side-navigation__label"
+                          ><span class="p-side-navigation__label"
+                            >Datasources</span
+                          ></span
+                        ></a
+                      >
+                    </li>
+                    <li class="p-side-navigation__item">
+                      <a class="p-side-navigation__link" href="#"
+                        ><i
+                          class="p-icon--information is-light p-side-navigation__icon"
+                        ></i
+                        ><span class="p-side-navigation__label"
+                          ><span class="p-side-navigation__label"
+                            >Feedback</span
+                          ></span
+                        ></a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="l-main">
+        <div class="p-panel">
+          <div class="p-panel__header">
+            <h4 class="p-panel__title">
+              8 models: 3 blocked, 2 alerts, 3 running
+            </h4>
+            <div class="p-panel__controls">
+              <button class="u-no-margin--bottom js-aside-open">
+                Open aside
+              </button>
+            </div>
+          </div>
+          <div class="p-panel__content">
+            <div class="u-fixed-width">
+              <table aria-label="JAAS table example" class="p-main-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <span class="status-icon is-running">Running (3)</span>
+                    </th>
+                    <th></th>
+                    <th>Owner</th>
+                    <th>Cloud/Region</th>
+                    <th>Credential</th>
+                    <th>Controller</th>
+                    <th class="u-align--right">Last Updated</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    data-test-model-uuid="57650e3c-815f-4540-89df-81fd5d70b7ef"
+                  >
+                    <td class="" data-test-column="name">
+                      <div>
+                        <a href="#/models/hatch@external/group-test"
+                          >group-test</a
+                        >
+                      </div>
+                    </td>
+                    <td class="u-overflow--visible" data-test-column="summary">
+                      <div class="u-flex">
+                        <div
+                          class="u-flex--block p-tooltip--top-center"
+                          aria-describedby="tp-cntr15"
+                        >
+                          <div class="has-icon">
+                            <i class="p-icon--information"></i><span>9</span>
+                          </div>
+                          <span
+                            class="p-tooltip__message"
+                            role="tooltip"
+                            id="tp-cntr15"
+                            >Applications</span
+                          >
+                        </div>
+                        <div
+                          class="u-flex--block p-tooltip--top-center"
+                          aria-describedby="tp-cntr16"
+                        >
+                          <div class="has-icon">
+                            <i class="p-icon--information"></i><span>0</span>
+                          </div>
+                          <span
+                            class="p-tooltip__message"
+                            role="tooltip"
+                            id="tp-cntr16"
+                            >Units</span
+                          >
+                        </div>
+                        <div
+                          class="u-flex--block p-tooltip--top-center"
+                          aria-describedby="tp-cntr17"
+                        >
+                          <div class="has-icon">
+                            <i class="p-icon--information"></i><span>0</span>
+                          </div>
+                          <span
+                            class="p-tooltip__message"
+                            role="tooltip"
+                            id="tp-cntr17"
+                            >Machines</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                    <td class="" data-test-column="owner">
+                      <a href="#_" class="p-link--soft">hatch</a>
+                    </td>
+                    <td class="" data-test-column="cloud">
+                      <a href="#_" class="p-link--soft">google/us-central1</a>
+                    </td>
+                    <td class="" data-test-column="credential">
+                      <a href="#_" class="p-link--soft">admin</a>
+                    </td>
+                    <td class="" data-test-column="controller">JAAS</td>
+                    <td class="u-align--right" data-test-column="updated">
+                      2020-06-17
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              {% block body %}{% endblock %}
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <aside class="l-aside is-collapsed" id="aside-panel">
+        <div class="p-panel">
+          <div class="p-panel__header">
+            <h4 class="p-panel__title">Aside panel</h4>
+            <div class="p-panel__controls">
+              <button
+                class="p-button--base js-aside-close u-no-margin--bottom has-icon"
+              >
+                <i class="p-icon--close"></i>
+              </button>
+            </div>
+          </div>
+          <div class="p-panel__content">
+            <form class="p-form p-form--stacked">
+              <div class="p-form__group row">
+                <div class="col-4">
+                  <label for="full-name-stacked" class="p-form__label"
+                    >Full name</label
+                  >
+                </div>
+
+                <div class="col-8">
+                  <div class="p-form__control">
+                    <input
+                      type="text"
+                      id="full-name-stacked"
+                      name="fullName"
+                      autocomplete="name"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="p-form__group row">
+                <div class="col-4">
+                  <label for="username-stacked" class="p-form__label"
+                    >Username</label
+                  >
+                </div>
+
+                <div class="col-8">
+                  <div class="p-form__control">
+                    <input
+                      type="text"
+                      id="username-stacked"
+                      name="username-stacked"
+                      autocomplete="username"
+                      aria-describedby="exampleHelpTextMessage"
+                    />
+                    <p class="p-form-help-text" id="exampleHelpTextMessage">
+                      30 characters or fewer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-form__group row p-form-validation is-error">
+                <div class="col-4">
+                  <label
+                    for="username-stacked-error"
+                    class="p-form__label is-required"
+                    >Email address</label
+                  >
+                </div>
+
+                <div class="col-8">
+                  <div class="p-form__control">
+                    <input
+                      type="text"
+                      id="username-stacked-error"
+                      class="p-form-validation__input"
+                      aria-invalid="true"
+                      name="username-stackederror"
+                      autocomplete="username"
+                      aria-describedby="username-error-message-stacked"
+                      required=""
+                    />
+                    <p
+                      class="p-form-validation__message"
+                      id="username-error-message-stacked"
+                    >
+                      This field is required.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <button
+                    class="p-button--positive u-float-right"
+                    name="add-details"
+                  >
+                    Add details
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="l-status">
+        <div class="p-panel demo-status">
+          <div class="u-fixed-width">Status bar</div>
+        </div>
+      </aside>
     </div>
-    <nav class="p-navigation__nav">
-      <ul class="p-navigation__items">
-        <li class="p-navigation__item {% if path.startswith('/brand') %}is-selected{% endif %}"><a class="p-navigation__link " href="/brand/">Brand</a></li>
-      </ul>
-      <ul class="p-navigation__items global-nav"></ul>
-    </nav>
-  </div>
-</header>
 
+    <!-- cookie policy and gloabl navigation component -->
+    <script src="{{ versioned_static('js/cookie-policy.js') }}"></script>
+    <script src="{{ versioned_static('js/global-nav.js') }}"></script>
+    <script>
+      canonicalGlobalNav.createNav();
+      cpNs.cookiePolicy();
+    </script>
 
-{% block body %}{% endblock %}
-
-
-<footer class="l-footer--sticky p-strip is-dark">
-  <div class="row">
-    <div class="col-9 col-medium-4">
-      <p class="u-no-max-width">© 2023 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical&nbsp;Ltd.</p>
-      <nav>
-        <ul class="p-inline-list--middot">
-          <li class="p-inline-list__item">
-            <a class="p-footer__link" href="https://www.ubuntu.com/legal">Legal information</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a class="p-footer__link" href="https://www.ubuntu.com/legal/data-privacy">Data privacy</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a class="p-footer__link" href="https://github.com/canonical/design.ubuntu.com/issues/new/choose">Report a bug on this site</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a href="" class="p-footer__link js-revoke-cookie-manager">Manage your tracker settings</a>
-          </li>
-        </ul>
-        <span class="u-off-screen">
-          <a href="#">Go to the top of the page</a>
-        </span>
-      </nav>
-    </div>
-    <div class="col-3 col-medium-2">
-      <h5 class="p-muted-heading">Follow us</h5>
-      <ul class="p-inline-list">
-        <li class="p-inline-list__item">
-          <a href="https://twitter.com/ubuntudesigners" class="p-icon--twitter">@ubuntudesigners on twitter</a>
-        </li>
-        <li class="p-inline-list__item">
-          <a href="https://www.instagram.com/ubuntudesigners/" class="p-icon--instagram">@ubuntudesigners on instagram</a>
-        </li>
-        <li class="p-inline-list__item">
-          <a href="https://ubuntu.com/blog/topics/design" class="p-icon--canonical">Web &amp; design blog</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
-<!-- cookie policy and gloabl navigation component -->
-<script src="{{ versioned_static('js/cookie-policy.js') }}"></script>
-<script src="{{ versioned_static('js/global-nav.js') }}"></script>
-<script>
-  canonicalGlobalNav.createNav();
-  cpNs.cookiePolicy();
-</script>
-
-</body>
+    <script src="{{ versioned_static('js/main.js') }}"></script>
+  </body>
 </html>

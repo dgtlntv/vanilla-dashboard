@@ -63,3 +63,4 @@ static/css
 # [js modules]
 static/js/global-nav.js
 static/js/cookie-policy.js
+static/js/main.js

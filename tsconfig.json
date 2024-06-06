@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "outFile": "static/js/main.js",
+    "sourceMap": true
+  },
+  "include": ["ts/**/*.ts"],
+  "exclude": ["**/*.test.ts"]
+}

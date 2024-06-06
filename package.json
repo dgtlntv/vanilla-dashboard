@@ -4,10 +4,11 @@
     "lint-python": "flake8 webapp && black --check --line-length 79 webapp",
     "lint-scss": "sass-lint _sass/**/*.scss --verbose --no-exit",
     "test": "yarn run lint-scss && yarn run lint-python",
-    "watch": "watch -p '_sass/**/*.scss' -c 'yarn run build'",
-    "build": "yarn run build-css && yarn run build-js",
+    "watch": "watch -p 'sass/**/*.scss' -p 'ts/**/*.ts' -c 'yarn run build'",
+    "build": "yarn run build-css && yarn run build-js && yarn run build-ts",
     "build-css": "sass sass/main.scss static/css/main.css --load-path=node_modules --style=compressed && postcss --use autoprefixer --replace static/css/**/*.css",
     "build-js": "yarn run build-global-nav && yarn run build-cookie-policy",
+    "build-ts": "tsc",
     "build-global-nav": "cp node_modules/@canonical/global-nav/dist/global-nav.js static/js/global-nav.js",
     "build-cookie-policy": "cp node_modules/@canonical/cookie-policy/build/js/cookie-policy.js static/js/cookie-policy.js",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
@@ -18,6 +19,7 @@
     "postcss-cli": "11.0.0",
     "sass": "1.77.4",
     "sass-lint": "1.13.1",
+    "typescript": "^5.4.5",
     "watch-cli": "0.2.3"
   },
   "dependencies": {
