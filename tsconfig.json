@@ -2,9 +2,17 @@
   "compilerOptions": {
     "target": "ES6",
     "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "removeComments": true,
-    "outFile": "static/js/main.js",
-    "sourceMap": true,
+    "noFallthroughCasesInSwitch": true,
+    // Enable once nullish values are resolved
+    "strictNullChecks": false,
+    "outDir": "static/js",
+    // Enable once webserver can serve .ts/.map files
+    "sourceMap": false,
     "types": ["gapi", "gapi.client", "gapi.client.sheets"]
   },
   "include": ["ts/**/*.ts"],
