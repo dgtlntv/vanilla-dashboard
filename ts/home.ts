@@ -1,3 +1,10 @@
+const vanillaUsageStatsTable = document.getElementById(
+  "vanilla-usage-stats-table"
+);
+const vanillaUsageStatsStatusBar = document.getElementById(
+  "vanilla-usage-stats-status-bar"
+);
+
 function constructTableRow(rowData: Array<any>) {
   const tableRowEl = document.createElement("tr");
 
@@ -15,9 +22,6 @@ function constructTableRow(rowData: Array<any>) {
 function renderSheetData(sheetValues: Array<any>) {
   console.log(sheetValues);
 
-  const vanillaUsageStatsTable = document.getElementById(
-    "vanilla-usage-stats-table"
-  );
   const virtualTableBodyEl = document.createDocumentFragment();
 
   sheetValues.forEach((rowData, index) => {
@@ -30,9 +34,13 @@ function renderSheetData(sheetValues: Array<any>) {
   });
 
   vanillaUsageStatsTable.appendChild(virtualTableBodyEl);
+
+  vanillaUsageStatsStatusBar.textContent = `${sheetValues.length} rows retrieved.`;
 }
 
 async function retrieveSheetData() {
+  vanillaUsageStatsStatusBar.textContent = "Retrieving data...";
+
   try {
     await gapi.client.init({
       apiKey: "AIzaSyDdu12mIqCIryiiwgpDshVIRg-ZiBOWl_I",
@@ -57,7 +65,11 @@ async function retrieveSheetData() {
     throw new Error("Error getting sheet values - check your spreadsheet ID!");
   }
 
-  renderSheetData(sheetValues);
+  if (sheetValues && sheetValues.length) {
+    renderSheetData(sheetValues);
+  } else {
+    throw new Error("No sheet values found!");
+  }
 }
 
 gapi.load("client", retrieveSheetData);

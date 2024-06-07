@@ -1,14 +1,9 @@
 function setupAppLayoutExamples() {
-  var aside = document.querySelector(".l-aside");
   var navigation = document.querySelector(".l-navigation");
 
   var menuToggle = document.querySelector(".js-menu-toggle");
   var menuClose = document.querySelector(".js-menu-close");
   var menuPin = document.querySelector(".js-menu-pin");
-  var asideOpen = document.querySelector(".js-aside-open");
-  var asideClose = document.querySelector(".js-aside-close");
-  var asideResize = document.querySelectorAll(".js-aside-resize");
-  var asidePin = document.querySelector(".js-aside-pin");
 
   if (menuToggle) {
     menuToggle.addEventListener("click", function () {
@@ -23,33 +18,6 @@ function setupAppLayoutExamples() {
     });
   }
 
-  if (asideOpen) {
-    asideOpen.addEventListener("click", function () {
-      aside.classList.remove("is-collapsed");
-    });
-  }
-
-  if (asideClose) {
-    asideClose.addEventListener("click", function () {
-      aside.classList.add("is-collapsed");
-    });
-  }
-
-  [].slice.call(asideResize).forEach(function (button: HTMLButtonElement) {
-    button.addEventListener("click", function () {
-      button.dataset.resizeClass;
-      var panel = document.getElementById(button.getAttribute("aria-controls"));
-      if (panel) {
-        panel.classList.remove("is-narrow");
-        panel.classList.remove("is-medium");
-        panel.classList.remove("is-wide");
-        if (button.dataset.resizeClass) {
-          panel.classList.add(button.dataset.resizeClass);
-        }
-      }
-    });
-  });
-
   if (menuPin) {
     menuPin.addEventListener("click", function () {
       navigation.classList.toggle("is-pinned");
@@ -61,17 +29,6 @@ function setupAppLayoutExamples() {
         menuPin.querySelector("i").classList.remove("p-icon--close");
       }
       (document.activeElement as HTMLElement).blur();
-    });
-  }
-
-  if (asidePin) {
-    asidePin.addEventListener("click", function () {
-      aside.classList.toggle("is-pinned");
-      if (aside.classList.contains("is-pinned")) {
-        (asidePin as HTMLElement).innerText = "Unpin";
-      } else {
-        (asidePin as HTMLElement).innerText = "Pin";
-      }
     });
   }
 }
