@@ -28,7 +28,7 @@
       href="{{ versioned_static('css/main.css') }}"
     />
 
-    <title>{% block title %}{{ title }}{% endblock title %}</title>
+    <title>Vanilla Usage Dashboard - {% block title %}{{ title }}{% endblock title %}</title>
     <meta
       name="description"
       content="Ubuntu brand, app and web guidelines that help you create professional materials, software, sites, apps that build the Ubuntu brand."
@@ -137,7 +137,7 @@
                 <nav aria-label="Main">
                   <ul class="p-side-navigation__list">
                     <li class="p-side-navigation__item">
-                      <a class="p-side-navigation__link" href="/brand"
+                      <a class="p-side-navigation__link" href="/"
                         ><i
                           class="p-icon--information is-light p-side-navigation__icon"
                         ></i
@@ -149,7 +149,7 @@
                       >
                     </li>
                     <li class="p-side-navigation__item">
-                      <a class="p-side-navigation__link" href="#"
+                      <a class="p-side-navigation__link" href="/"
                         ><i
                           class="p-icon--information is-light p-side-navigation__icon"
                         ></i
@@ -161,7 +161,7 @@
                       >
                     </li>
                     <li class="p-side-navigation__item">
-                      <a class="p-side-navigation__link" href="#"
+                      <a class="p-side-navigation__link" href="/"
                         ><i
                           class="p-icon--information is-light p-side-navigation__icon"
                         ></i
@@ -183,7 +183,7 @@
       <main class="l-main">
         <div class="p-panel">
           <div class="p-panel__header">
-            <h4 class="p-panel__title">Vanilla usage statistics per site</h4>
+            <h4 class="p-panel__title">{% block heading %}{% endblock %}</h4>
           </div>
           <div class="p-panel__content">
             <div class="u-fixed-width">{% block body %}{% endblock %}</div>

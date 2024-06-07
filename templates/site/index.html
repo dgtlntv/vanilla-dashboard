@@ -1,0 +1,15 @@
+{% extends "_layouts/page.html" %}
+
+{% block title %}Site statistics{% endblock %}
+
+{% block meta_copydoc %}https://docs.google.com/document/d/1nyNLG5IfJHRpGGMJzJIkm3TJSXTvd4vOdMhu2M9Lfxo/edit{% endblock %}
+
+{% block heading %}Vanilla usage statistics - site{% endblock %}
+
+{% block content %}
+<div id="vanilla-usage-site-url"></div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ versioned_static('js/site.js') }}"></script>
+{% endblock %}

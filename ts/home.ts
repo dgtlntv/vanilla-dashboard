@@ -8,10 +8,19 @@ const vanillaUsageStatsStatusBar = document.getElementById(
 function constructTableRow(rowData: Array<any>) {
   const tableRowEl = document.createElement("tr");
 
-  rowData.forEach((cellData) => {
+  rowData.forEach((cellData, index) => {
     const tableCellEl = document.createElement("td");
 
-    tableCellEl.textContent = cellData;
+    if (index === 0) {
+      const linkEl = document.createElement("a");
+
+      linkEl.href = `/site?url=${encodeURIComponent(cellData)}`;
+      linkEl.textContent = cellData;
+
+      tableCellEl.appendChild(linkEl);
+    } else {
+      tableCellEl.textContent = cellData;
+    }
 
     tableRowEl.appendChild(tableCellEl);
   });
