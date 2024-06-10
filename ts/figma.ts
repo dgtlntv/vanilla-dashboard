@@ -4,16 +4,9 @@ const figmaDetachedTable = document.getElementById("figma-detached-table")
 
 function constructTableRowFigma(rowData: Array<any>) {
     const tableRowEl = document.createElement("tr")
-    rowData.forEach((cellData, index) => {
+    rowData.forEach((cellData) => {
         const tableCellEl = document.createElement("td")
-        if (index === 0) {
-            const linkEl = document.createElement("a")
-            linkEl.href = `/site?url=${encodeURIComponent(cellData)}`
-            linkEl.textContent = cellData
-            tableCellEl.appendChild(linkEl)
-        } else {
-            tableCellEl.textContent = cellData
-        }
+        tableCellEl.textContent = cellData
         tableRowEl.appendChild(tableCellEl)
     })
     return tableRowEl
