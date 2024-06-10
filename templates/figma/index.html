@@ -1,0 +1,58 @@
+{% extends "_layouts/page.html" %}
+
+{% block title %}Figma library usage statistics{% endblock %}
+
+{% block heading %}Figma library usage statistics{% endblock %}
+
+{% block content %}
+<h3>Source mix</h3>
+<table aria-label="Figma source mix statistics per file" class="p-main-table">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>File</th>
+      <th># non-component nodes (whole file)</th>
+      <th># component nodes (whole file)</th>
+      <th>% component nodes (whole file)</th>
+      <th># non-component nodes (ready for dev)</th>
+      <th># component nodes (ready for dev)</th>
+      <th>% component nodes (ready for dev)</th>
+    </tr>
+  </thead>
+  <tbody id="figma-source-mix-table"></tbody>
+</table>
+
+<h3>Library mix</h3>
+<table aria-label="Figma library mix per file" class="p-main-table">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>File</th>
+      <th>% Design System Library</th>
+      <th>% 🔶 app-layout components</th>
+      <th>% 🔴 [EDGE] Vanilla - Core component library</th>
+      <th># Design System Library</th>
+      <th># 🔶 app-layout components</th>
+      <th># 🔴 [EDGE] Vanilla - Core component library</th>
+    </tr>
+  </thead>
+  <tbody id="figma-library-mix-table"></tbody>
+</table>
+
+<h3>Detached components</h3>
+<table aria-label="Figma detached component statistics" class="p-main-table">
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Library</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody id="figma-detached-table"></tbody>
+</table>
+{% endblock %}
+
+{% block js %}
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="{{ versioned_static('js/figma.js') }}"></script>
+{% endblock %}
