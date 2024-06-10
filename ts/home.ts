@@ -66,7 +66,7 @@ async function retrieveSheetData() {
   try {
     const sheetResponse = await gapi.client.sheets.spreadsheets.values.get({
       spreadsheetId: "1vL8Z7BhmcLxkNGKQm6emI0gQwy_e4Lvq5PUqdCEw7C4",
-      range: "Sheet1",
+      range: "Metrics",
     });
 
     sheetValues = sheetResponse.result.values;
