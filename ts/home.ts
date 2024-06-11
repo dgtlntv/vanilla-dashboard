@@ -1,3 +1,13 @@
+declare var Dexie: any;
+
+var db = new Dexie("WebProperties");
+
+db.version(1).stores({
+  sites: `
+    ++id,
+    url`,
+});
+
 const vanillaUsageStatsTable = document.getElementById(
   "vanilla-usage-stats-table"
 );
@@ -33,13 +43,10 @@ function renderSheetData(sheetValues: Array<any>) {
 
   const virtualTableBodyEl = document.createDocumentFragment();
 
-  sheetValues.forEach((rowData, index) => {
-    // Hack because the Sheets data currently has headers in the first row
-    if (index !== 0) {
-      const tableRowEl = constructTableRow(rowData);
+  sheetValues.forEach((rowData) => {
+    const tableRowEl = constructTableRow(rowData);
 
-      virtualTableBodyEl.appendChild(tableRowEl);
-    }
+    virtualTableBodyEl.appendChild(tableRowEl);
   });
 
   vanillaUsageStatsTable.appendChild(virtualTableBodyEl);
@@ -47,9 +54,29 @@ function renderSheetData(sheetValues: Array<any>) {
   vanillaUsageStatsStatusBar.textContent = `${sheetValues.length} rows retrieved.`;
 }
 
-async function retrieveSheetData() {
-  vanillaUsageStatsStatusBar.textContent = "Retrieving data...";
+async function saveSheetDataToIndexedDb(sheetValues: Array<any>) {
+  console.log(sheetValues);
 
+  const convertedSheetValues = sheetValues.map((valueArr) => ({
+    url: valueArr[0],
+    numElementsWithClassNames: valueArr[1],
+    numPureVanillaElements: valueArr[2],
+    numDirtyVanillaElements: valueArr[3],
+    percentPureVanillaUsage: valueArr[4],
+    percentDirtyVanillaUsage: valueArr[5],
+    percentPureVsDirtyUsage: valueArr[6],
+  }));
+
+  console.log(convertedSheetValues);
+
+  await db.sites.clear();
+
+  await db.sites.bulkPut(convertedSheetValues).catch((err: any) => {
+    console.log("Error performing db bulkPut:", err);
+  });
+}
+
+async function pullDataFromSheet() {
   try {
     await gapi.client.init({
       apiKey: "AIzaSyDdu12mIqCIryiiwgpDshVIRg-ZiBOWl_I",
@@ -75,9 +102,50 @@ async function retrieveSheetData() {
   }
 
   if (sheetValues && sheetValues.length) {
-    renderSheetData(sheetValues);
+    // Hack because the Sheets data currently has headers in the first row
+    const sheetValuesMinusHeaders = sheetValues.slice(1);
+
+    renderSheetData(sheetValuesMinusHeaders);
+
+    saveSheetDataToIndexedDb(sheetValuesMinusHeaders);
   } else {
     throw new Error("No sheet values found!");
+  }
+}
+
+async function pullDataFromIdb() {
+  const sitesDbItems = await db.sites.toArray();
+
+  console.log(sitesDbItems);
+
+  const convertedDbItems = sitesDbItems.map((item: any): any => [
+    item.url,
+    item.numElementsWithClassNames,
+    item.numPureVanillaElements,
+    item.numDirtyVanillaElements,
+    item.percentPureVanillaUsage,
+    item.percentDirtyVanillaUsage,
+    item.percentPureVsDirtyUsage,
+  ]);
+
+  console.log(convertedDbItems);
+
+  renderSheetData(convertedDbItems);
+}
+
+async function retrieveSheetData() {
+  vanillaUsageStatsStatusBar.textContent = "Retrieving data...";
+
+  const idbCount = await db.sites.count();
+
+  if (idbCount) {
+    console.log("pull from idb");
+
+    await pullDataFromIdb();
+  } else {
+    console.log("pull from sheet");
+
+    await pullDataFromSheet();
   }
 }
 
